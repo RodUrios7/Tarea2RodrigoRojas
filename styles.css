@@ -33,8 +33,8 @@
 :root {
     /* Colores principales */
     /* ERROR 1: El color primario no es el correcto, debería ser un cyan vibrante
-       PISTA: Revisa el valor hexadecimal, el original era un tono cyan (#0ea5e9) */
-    --color-primary: #ff0000;          /* Cyan vibrante */
+       PISTA: Revisa el valor hexadecimal, el original era un tono cyan (#0ea5e9) */ 
+    --color-primary: #0ea5e9;          /* Cyan vibrante */
     --color-primary-dark: #0284c7;
     --color-primary-light: #38bdf8;
     --color-secondary: #8b5cf6;         /* Violeta eléctrico */
@@ -102,7 +102,7 @@
     /* Z-index */
     /* ERROR 2: El header queda detrás del contenido al hacer scroll
        PISTA: El valor del z-index es muy bajo para un elemento fijo */
-    --z-fixed: 1;
+    --z-fixed: 100;
     --z-modal: 1000;
     
     /* Header */
@@ -160,6 +160,7 @@ button {
 /* ========== LAYOUT ========== */
 .container {
     max-width: 1200px;
+    margin: 0 auto;
     /* ERROR 3: El contenido no está centrado en la página
        PISTA: Falta una propiedad que centra elementos de bloque horizontalmente */
     padding: 0 var(--spacing-lg);
@@ -210,6 +211,7 @@ button {
     font-size: var(--font-size-base);
     font-weight: 600;
     border-radius: var(--border-radius-lg);
+    transition: all var(--transition-base);
     /* ERROR 4 (AVANZADO): Los botones cambian de estado de forma abrupta sin suavidad
        SOLUCIÓN: Falta la propiedad transition para animar los cambios de estado
        Agregar: transition: all var(--transition-base);
@@ -222,6 +224,7 @@ button {
     background: var(--gradient-primary);
     color: white;
     border: none;
+    box-shadow: var(--shadow-md);
     /* ERROR 5: El botón primario no tiene profundidad ni efecto de brillo
        PISTA: Falta la propiedad que agrega sombras al elemento */
 }
