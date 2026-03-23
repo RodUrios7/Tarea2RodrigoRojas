@@ -284,6 +284,7 @@ button {
     display: flex;
     /* ERROR 6: Los elementos del nav no están alineados verticalmente al centro
        PISTA: Falta una propiedad de flexbox que alinea items en el eje transversal */
+       align-items: center;
     justify-content: space-between;
     height: 100%;
 }
@@ -324,6 +325,7 @@ button {
     left: 0;
     width: 0;
     height: 2px;
+    transition: width var(--transition-base);
     background: var(--gradient-primary);
     /* ERROR 7 (AVANZADO): La línea debajo del link aparece de golpe sin animación
        SOLUCIÓN: Falta la transición para la propiedad width
@@ -429,6 +431,7 @@ button {
 
 .hero__buttons {
     display: flex;
+    gap: var(--spacing-md);
     /* ERROR 8: Los botones del hero están pegados sin espacio entre ellos
        PISTA: Falta la propiedad que define el espacio entre elementos flex */
     flex-wrap: wrap;
@@ -451,6 +454,7 @@ button {
     justify-content: center;
     /* ERROR 9: El blob en el hero no tiene la animación de forma dinámica
        PISTA: Falta la propiedad animation que referencia a blob-animation */
+    animation: blob-animation 8s ease-in-out infinite;
     position: relative;
 }
 
@@ -551,6 +555,7 @@ button {
     display: grid;
     /* ERROR 10: Las cards de intereses no se muestran en 3 columnas, están apiladas
        PISTA: Falta la propiedad de CSS Grid que define las columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-3xl);
 }
@@ -574,6 +579,7 @@ button {
     right: 0;
     height: 3px;
     background: var(--gradient-primary);
+    transition: transform var(--transition-base);
     transform: scaleX(0);
     /* ERROR 12 (AVANZADO): La línea superior de las cards aparece instantáneamente sin animación
        SOLUCIÓN: Falta la transición para la propiedad transform
